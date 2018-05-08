@@ -1,4 +1,4 @@
 #!/bin/bash
-sudo rm -r /var/www/html/AWSBGTest/*
-cd /var/www/html/AWSBGTest/
+
+cd /var/www/html/AWSmagento/
 sudo git pull origin master
