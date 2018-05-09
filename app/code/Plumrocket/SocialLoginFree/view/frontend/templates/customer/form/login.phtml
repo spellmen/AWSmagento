@@ -20,6 +20,20 @@
     <div class="block-title">
         <strong id="block-customer-login-heading" role="heading" aria-level="2"><?php echo $block->escapeHtml(__('Registered Customers')) ?></strong>
     </div>
+     <?php
+                $helper = $this->helper('Plumrocket\SocialLoginFree\Helper\Data');
+                if($helper->modulePositionEnabled('login') && $helper->hasButtons()) : ?>
+                    <div class="pslogin-spacer pslogin-clearfix">
+                        <table>
+                            <tr>
+                                <td><div class="pslogin-border"></div></td>
+                                <td class="pslogin-bordertext w25"><?php echo __('OR'); ?></td>
+                                <td><div class="pslogin-border"></div></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <?php echo $this->getChildHtml('pslogin_buttons'); ?>
+                <?php endif; ?>
     <div class="block-content" aria-labelledby="block-customer-login-heading">
         <form class="form form-login"
               action="<?php echo $block->escapeUrl($block->getPostActionUrl()) ?>"
@@ -47,20 +61,7 @@
                     <div class="secondary"><a class="action remind" href="<?php echo $block->escapeUrl($block->getForgotPasswordUrl()) ?>"><span><?php echo $block->escapeHtml(__('Forgot Your Password?')) ?></span></a></div>
                 </div>
 
-                <?php
-                $helper = $this->helper('Plumrocket\SocialLoginFree\Helper\Data');
-                if($helper->modulePositionEnabled('login') && $helper->hasButtons()) : ?>
-                    <div class="pslogin-spacer pslogin-clearfix">
-                        <table>
-                            <tr>
-                                <td><div class="pslogin-border"></div></td>
-                                <td class="pslogin-bordertext w25"><?php echo __('OR'); ?></td>
-                                <td><div class="pslogin-border"></div></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <?php echo $this->getChildHtml('pslogin_buttons'); ?>
-                <?php endif; ?>
+               
             </fieldset>
         </form>
     </div>
