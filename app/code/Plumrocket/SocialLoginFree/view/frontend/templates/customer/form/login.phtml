@@ -23,6 +23,7 @@
      <?php
                 $helper = $this->helper('Plumrocket\SocialLoginFree\Helper\Data');
                 if($helper->modulePositionEnabled('login') && $helper->hasButtons()) : ?>
+                    <?php echo $this->getChildHtml('pslogin_buttons'); ?>
                     <div class="pslogin-spacer pslogin-clearfix">
                         <table>
                             <tr>
@@ -32,7 +33,6 @@
                             </tr>
                         </table>
                     </div>
-                    <?php echo $this->getChildHtml('pslogin_buttons'); ?>
                 <?php endif; ?>
     <div class="block-content" aria-labelledby="block-customer-login-heading">
         <form class="form form-login"

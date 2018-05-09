@@ -2,8 +2,6 @@
 
 cd /var/www/html/AWSmagento/
 sudo git pull origin master
-sudo php bin/magento module:enable Plumrocket_Base
-sudo php bin/magento module:enable Plumrocket_SocialLoginFree
 sudo php bin/magento setup:upgrade
 sudo php bin/magento setup:static-content:deploy -f
 sudo chown -R www-data:www-data .
